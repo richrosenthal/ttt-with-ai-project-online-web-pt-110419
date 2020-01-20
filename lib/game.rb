@@ -23,15 +23,19 @@ class Game
   end
   
   def over?
-    
+    won? || draw?
   end
   
   def won?
-    
+    WIN_COMBINATIONS.detect do |winner|
+      @board[winner[0]] == @board[winner[1]] &&
+      @board[winner[1]] == @board[winner[2]] &&
+      (@board[winner[0]] == player_1 || @board[winner[0]] == player_2)
+    end 
   end 
   
   def draw?
-    
+    @board.full? && !won?
   end 
     
 #   def winner
@@ -40,22 +44,9 @@ class Game
 #     end 
 #   end
     
-# def over? 
-#     won? || draw?
-#   end 
+
   
-#   def draw? 
-#     full? && !won?
-#   end 
-  
-#   def won? 
-    
-#     WIN_COMBINATIONS.detect do |winner|
-#       @board[winner[0]] == @board[winner[1]] &&
-#       @board[winner[1]] == @board[winner[2]] &&
-#       (@board[winner[0]] == "X" || @board[winner[0]] == "O")
-#     end 
-#   end 
+
     
 #   def full?
 #     #thank you stackoverflow 
