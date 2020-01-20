@@ -27,19 +27,18 @@ class Board
   end 
   
   def turn_count
+    cells.count{|char| char =="X" || char=="O"}
     
   end
   
-  def taken?
+  def taken?(input)
+    position(input)=="X" || position(input)=="O"
+  end 
+  
+  def valid_move?(input)
     
   end 
   
-  def valid_move?
-    
-  end 
   
-  def update
-    
-  end 
 end   
   
