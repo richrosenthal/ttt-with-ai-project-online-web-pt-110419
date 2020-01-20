@@ -28,9 +28,8 @@ class Game
   
   def won?
     WIN_COMBINATIONS.detect do |winner|
-      @board[winner[0]] == @board[winner[1]] &&
-      @board[winner[1]] == @board[winner[2]] &&
-      (@board[winner[0]] == player_1 || @board[winner[0]] == player_2)
+      @board.cells[winner[0]] == @board.cells[winner[1]] &&
+      @board.cells[winner[1]] == @board.cells[winner[2]] 
     end 
   end 
   
@@ -38,30 +37,18 @@ class Game
     @board.full? && !won?
   end 
     
-#   def winner
-#     if winning_combo = won?
-#       @winner = @board[winning_combo.first]
-#     end 
-#   end
+  def winner
+    
+  end 
+  
+
     
 
   
 
     
-#   def full?
-#     #thank you stackoverflow 
-#     #learned today that you can have an array of boolean values
-#     boolean_array = []
-#     @board.each do |token|
-#         if token == "X" || token == "O"
-#         boolean_array << true
-#         else
-#         boolean_array << false
-#         end
-#     end
-#     boolean_array.all?
-#   end 
-  
+
+
  
   
   
