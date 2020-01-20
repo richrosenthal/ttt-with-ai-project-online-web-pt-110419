@@ -25,6 +25,14 @@ class Game
   def over?
     
   end
+  
+  def won?
+    
+  end 
+  
+  def draw?
+    
+  end 
     
 #   def winner
 #     if winning_combo = won?
